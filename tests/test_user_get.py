@@ -1,6 +1,6 @@
 import requests
-from QA.LearnAQA_PythonAPI.lib.base_case import BaseCase
-from QA.LearnAQA_PythonAPI.lib.assertions import Assertions
+from libQA.base_case import BaseCase
+from libQA.assertions import Assertions
 
 
 class TestUserGet(BaseCase):
@@ -14,7 +14,7 @@ class TestUserGet(BaseCase):
     def test_get_user_details_not_auth_as_same_user(self):
         data = {
             'email': 'vinkotov@example.com',
-            'passowd': '1234'
+            'password': '1234'
         }
 
         response1 = requests.post("https://playground.learnqa.ru/api/user/login", data=data)
