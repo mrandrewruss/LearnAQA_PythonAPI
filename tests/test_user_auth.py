@@ -1,7 +1,7 @@
 import pytest
 import requests
-from QA.LearnAQA_PythonAPI.libQA.base_case import BaseCase
-from QA.LearnAQA_PythonAPI.libQA.assertions import Assertions
+from libQA.base_case import BaseCase
+from libQA.assertions import Assertions
 
 
 class TestUserAuth(BaseCase):
