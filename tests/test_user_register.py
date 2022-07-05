@@ -1,6 +1,6 @@
 import requests
-from QA.LearnAQA_PythonAPI.lib.base_case import BaseCase
-from QA.LearnAQA_PythonAPI.lib.assertions import Assertions
+from libQA.base_case import BaseCase
+from libQA.assertions import Assertions
 from datetime import datetime
 
 
@@ -38,4 +38,5 @@ class TestUserRegister(BaseCase):
         response = requests.post("https://playground.learnqa.ru/api/user/", data=data)
 
         Assertions.assert_status_code(response, 400)
-        assert response.content.decode("utf-8") == f"Users with email '{email}' already exists", f"Unexpected response content {response.content}"
+        assert response.content.decode("utf-8") == \
+               f"Users with email '{email}' already exists", f"Unexpected response content {response.content}"
