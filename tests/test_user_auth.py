@@ -21,9 +21,8 @@ class TestUserAuth(BaseCase):
         self.token = self.get_header(response1, "x-csrf-token")
         self.user_id_from_auth_method = self.get_json_value(response1, "user_id")
 
-    # Простой позитивный тест: проверка авторизации
     def test_auth_user(self):
-
+        # SIMPLE POSITIVE TEST: AUTHORIZATION CHECK
         response2 = requests.get(
             "https://playground.learnqa.ru/api/user/auth",
             headers={"x-csrf-token": self.token},
@@ -37,10 +36,9 @@ class TestUserAuth(BaseCase):
             "User id from auth method is not equal to user id from check method"
         )
 
-    # Негативные тест: авторизация без куки/без токена
-    # exclude_params = [("no_cookie"),("no_token")]
     @pytest.mark.parametrize('condition', exclude_params)
     def test_negative_auth_check(self, condition):
+        # NEGATIVE TEST: AUTHORIZATION WITHOUT COOKIES / WITHOUT TOKEN
         if condition == "no_cookie":
             response2 = requests.get(
                 "https://playground.learnqa.ru/api/user/auth",
