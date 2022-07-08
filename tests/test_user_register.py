@@ -7,7 +7,7 @@ from datetime import datetime
 class TestUserRegister(BaseCase):
     def setup(self):
         base_part = "learnqa"
-        domain = "example.com"
+        domain = "@example.com"
         random_part = datetime.now().strftime("%m%d%Y%H%M%S")
         self.email = f"{base_part}{random_part}{domain}"
 
