@@ -42,5 +42,6 @@ class Assertions:
             assert name in response_as_dict, f"Response JSON doesn't have key '{name}'"
 
     @staticmethod
-    def assert_status_code(response: Response, expected_status_code):
-        assert response.status_code == expected_status_code, f"Unexpected status code! Expected: {expected_status_code}. Actual: {response.status_code}"
+    def assert_code_status(response: Response, expected_status_code):
+        assert response.status_code == expected_status_code, \
+            f"Unexpected status code! Expected: {expected_status_code}. Actual: {response.status_code}"
