@@ -1,24 +1,12 @@
 import requests
 from libQA.base_case import BaseCase
 from libQA.assertions import Assertions
-from datetime import datetime
 
 
 class TestUserRegister(BaseCase):
-    def setup(self):
-        base_part = "learnqa"
-        domain = "@example.com"
-        random_part = datetime.now().strftime("%m%d%Y%H%M%S")
-        self.email = f"{base_part}{random_part}{domain}"
-
     def test_create_user_successfully(self):
-        data = {
-            'password': '123',
-            'username': 'learnqa',
-            'firstName': 'learnqa',
-            'lastName': 'learnqa',
-            'email': self.email
-        }
+        # POSITIVE TEST: CREATE USER WITH NEW EMAIL
+        data = self.prepare_registration_data()
 
         response = requests.post("https://playground.learnqa.ru/api/user/", data=data)
 
@@ -26,14 +14,9 @@ class TestUserRegister(BaseCase):
         Assertions.assert_json_has_key(response, "id")
 
     def test_create_user_with_existing_email(self):
+        # NEGATIVE TEST: CREATE USER WITH EXISTING EMAIL
         email = 'vinkotov@example.com'
-        data = {
-            'password': '123',
-            'username': 'learnqa',
-            'firstName': 'learnqa',
-            'lastName': 'learnqa',
-            'email': email
-        }
+        data = self.prepare_registration_data(email)
 
         response = requests.post("https://playground.learnqa.ru/api/user/", data=data)
 
