@@ -23,7 +23,7 @@ class TestUserEdit(BaseCase):
             'password': password
         }
 
-        response2 = requests.post("https://playground.learnqa.ru/api/login/", data=login_data)
+        response2 = requests.post("https://playground.learnqa.ru/api/user/login/", data=login_data)
 
         auth_sid = self.get_cookie(response2, "auth_sid")
         token = self.get_header(response2, "x-csrf-token")

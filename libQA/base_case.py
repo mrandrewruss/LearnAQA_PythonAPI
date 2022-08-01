@@ -1,6 +1,6 @@
 import json.decoder
-from requests import Response
 from datetime import datetime
+from requests import Response
 
 
 class BaseCase:
