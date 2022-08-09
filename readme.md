@@ -22,17 +22,25 @@
 - **Creation of a framework & running in Docker** 🐳
   - [x] Create an existing user
   - [x] Creating a new user
-  - [ ] User View
-  - [ ] User editing
-  - [ ] Transferring a request to a method
-  - [ ] Replacing Methods
-  - [ ] Logging
-  - [ ] Allure
+  - [x] User View
+  - [x] User editing
+  - [x] Transferring a request to a method
+  - [x] Replacing Methods
+  - [x] Logging
+  - [x] Allure (add: @allure.epic + @allure.description + with allure.step("abc"))
   - [ ] Environment
   - [ ] Running Tests in Docker
 
 
 ---
 `pip3 install -r requirements.txt` -> _install packages from requirements file_
+
+#### Pytest
+`python3 -m pytest tests` -> _running tests (all)_
+
+#### Allure
+`python3 -m pytest --alluredir=test_results/ tests/test_user_auth.py` -> _running test with allure_
+
+`allure serve test_results/` -> _allure report generation_
 
 
