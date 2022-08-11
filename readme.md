@@ -44,6 +44,6 @@
 `allure serve test_results/` -> _allure report generation_
 
 #### Environment
-`export ENV=prod (dev)` -> _set environment variable: prod or dev (* - Linux)_
+`export ENV=prod` / `export ENV=dev`-> _set environment variable: prod or dev (* - Linux)_
 
-`echo $ENV` -> _check variable value (* - Linux)_
+`echo $ENV` / `printenv ENV` -> _check variable value (* - Linux)_
