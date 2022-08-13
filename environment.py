@@ -2,12 +2,13 @@ import os
 
 
 class Environment:
-    DEV = 'dev'
-    PROD = 'prod'
+    DEV = "dev"
+    PROD = "prod"
+    env = os.environ['ENV']
 
     URLS = {
-        DEV: "https://playground.learnqa.ru/api_dev",
-        PROD: "https://playground.learnqa.ru/api"
+        DEV: "https://playground.learnqa.ru/ajax/api_dev",
+        PROD: "https://playground.learnqa.ru/ajax/api"
     }
 
     def __int__(self):
@@ -24,3 +25,4 @@ class Environment:
 
 
 ENV_OBJECT = Environment()
+
