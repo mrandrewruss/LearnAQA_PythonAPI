@@ -4,7 +4,7 @@ import os
 class Environment:
     DEV = "dev"
     PROD = "prod"
-    env = os.environ['ENV']
+    # env = os.environ['ENV']
 
     URLS = {
         DEV: "https://playground.learnqa.ru/ajax/api_dev",
