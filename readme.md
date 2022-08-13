@@ -39,6 +39,20 @@
 `python3 -m pytest tests` -> _running tests (all)_
 
 #### Allure
+```
+INSTALL ALLURE VERSION = 2.18.1
+
+    curl -o allure-2.18.1.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.18.1/allure-commandline-2.18.1.tgz
+    sudo tar -zxvf allure-2.18.1.tgz -C /opt/
+    sudo ln -s /opt/allure-2.18.1/bin/allure /usr/bin/allure
+    rm -rf allure-2.18.1.tgz
+    allure --version
+    
+JAVA_JDK
+    sudo apt install default-jdk
+
+```
+
 `python3 -m pytest --alluredir=test_results/ tests/test_user_auth.py` -> _running test with allure_
 
 `allure serve test_results/` -> _allure report generation_
